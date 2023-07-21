@@ -14,6 +14,6 @@ The repository is organized with each problem having its dedicated folder. Insid
 
 `<problem-name>.py`: Python file containing the solution code.
 
-`README.md`: Detailed explanation of the problem.
+`README.md`: Detail about the problem.
 
 ### Happy coding! 🎉🎉
