@@ -12,7 +12,7 @@ Feel free to explore the solutions and use them as a reference to learn and impr
 ### Code Organization
 The repository is organized with each problem having its dedicated folder. Inside each folder, you will find:
 
-`solution.py`: Python file containing the solution code.
+`<problem-name>.py`: Python file containing the solution code.
 
 `README.md`: Detailed explanation of the problem.
 
