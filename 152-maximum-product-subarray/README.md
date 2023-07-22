@@ -27,3 +27,16 @@
 	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
 	<li>The product of any prefix or suffix of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</li>
 </ul>
+
+### Solution Approach
+
+The code calculates the maximum product of an array using a dynamic programming approach. It uses two variables, `CurrentMax` and `CurrentMin`, to keep track of the current maximum and minimum products. The `result` variable is initially set to the first element of the `nums` array.
+
+Then, it iterates through each element of the `nums` array. For each element, it calculates three possible products: 
+1. The product of the element itself
+2. The product of the element and the current maximum product (`i * CurrentMax`)
+3. The product of the element and the current minimum product (`i * CurrentMin`)
+
+It updates the `CurrentMax` and `CurrentMin` variables based on the maximum and minimum of these three products. Finally, it updates the `result` variable with the maximum of the `result` and `CurrentMax`.
+
+After iterating through all the elements, the code returns the `result`, which represents the maximum product of the array.
