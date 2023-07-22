@@ -46,3 +46,19 @@
 	<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
 	<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times.</li>
 </ul>
+
+### Solution Approach
+
+The code uses a modified binary search algorithm to find the minimum number in the given list. It starts by initializing two pointers, `first` and `last`, which represent the first and last indices of the list.
+
+Inside the `while` loop, it compares the numbers at the `first` and `last` indices. If the number at `first` is smaller than the number at `last`, it means that the list is sorted in ascending order, so the minimum number is at the `first` index. In this case, the code updates the `result` variable with the minimum of the current `result` and the number at the `first` index, and then breaks out of the loop.
+
+If the numbers at `first` and `last` indices are not in ascending order, it means that the list is rotated, and the minimum number is somewhere in the middle of the list. The code calculates the middle index using `(first + last) // 2`. It updates the `result` variable with the minimum of the current `result` and the number at the middle index.
+
+Then, it checks if the number at the middle index is greater than or equal to the number at the `first` index. If it is, it means that the minimum number is located in the right half of the list. In this case, it updates the `first` pointer to `mid + 1` and continues searching in the right half.
+
+If the number at the middle index is smaller than the number at the `first` index, it means that the minimum number is located in the left half of the list. In this case, it updates the `last` pointer to `mid - 1` and continues searching in the left half.
+
+The loop continues until the `first` pointer is greater than the `last` pointer, which indicates that the search is complete. Finally, it returns the `result` variable, which contains the minimum number found in the list.
+
+Overall, the algorithm has a time complexity of O(log n) as it divides the search space in half at each step of the binary search.
