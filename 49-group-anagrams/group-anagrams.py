@@ -1,11 +1,10 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         hashmap = {}
-        for i, s in enumerate(strs):
-            count = [0] * 26
-            for char in s:
-                #Incrementing by using ASCII values
-                count[ord(char) - ord("a")] += 1
-            sorted_str = tuple(count)
-            hashmap.setdefault(sorted_str, []).append(i)
-        return [[strs[i] for i in group] for group in hashmap.values()]
+        for s in strs:
+            sorted_str = ''.join(sorted(s))
+            if sorted_str in hashmap:
+                hashmap[sorted_str].append(s)
+            else:
+                hashmap[sorted_str] = [s]
+        return list(hashmap.values())
